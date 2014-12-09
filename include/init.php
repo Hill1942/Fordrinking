@@ -6,7 +6,11 @@
  * Time: 22:52
  */
 
+include __SITE_PATH . '/core/' . 'controller_base.php';
+
 include __SITE_PATH . '/core/' . 'router.php';
+
+include __SITE_PATH . '/core/' . 'template.php';
 
 
 

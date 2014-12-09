@@ -7,10 +7,11 @@
  */
 
 abstract class BaseController {
-    protected $registry;
+    //protected $registry;
+    protected $templateManager;
 
-    function __construct($registry) {
-        $this->registry = $registry;
+    function __construct() {
+        $this->templateManager = new Template();
     }
 
     abstract function index();

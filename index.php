@@ -14,3 +14,10 @@ define('__SITE_PATH', $site_path);
 include 'include/init.php';
 
 //$registy->router = new router($regist)
+
+$router = new Router();
+
+$router->setPath (__SITE_PATH . '/controller');
+
+/*** load the controller ***/
+$router->loader();

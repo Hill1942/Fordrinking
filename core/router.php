@@ -20,8 +20,8 @@ class Router {
 
     private $action;
 
-    public function __construct($registry) {
-        $this->registry = $registry;
+    public function __construct() {
+       // $this->registry = $registry;
     }
 
     public function setPath($path) {
@@ -43,39 +43,23 @@ class Router {
         include $this->file;
 
         $class = $this->controller . 'Controller';
-        $controller = new $class($this->registry);
+        $controller = new $class();
+        $controller->index();
 
-        if (is_callable(array($controller, $this->action)) == false) {
-            $action = 'index';
-        } else {
-            $action = $this->action;
-        }
-
-        $controller->$action();
     }
 
     private function getController() {
         $route = (empty($_GET['rt'])) ? '' : $_GET['rt'];
 
         if (empty($route)) {
-            $route = 'index';
-        } else {
-            $parts = explode('/', $route);
-            $this->controller = $parts[0];
-            if (isset($parts[1])) {
-                $this->action = $parts[1];
-            }
-        }
-
-        if (empty($this->controller)) {
             $this->controller = 'index';
+        } else {
+            $this->controller = $route;
         }
 
-        if (empty($this->action)) {
-            $this->action = 'index';
-        }
 
-        $this->file = $this->path . '/' . $this->controller . '.php';
+
+        $this->file = $this->path . '/' . $this->controller . '.controller.php';
     }
 
 
