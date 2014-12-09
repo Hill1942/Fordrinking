@@ -1,0 +1,12 @@
+{
+    "name": "for drinking",
+    "description": "social network",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yang Kaidi",
+            "email": "ykdacd123@gmail.com"
+        }
+    ]
+}

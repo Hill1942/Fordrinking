@@ -1,0 +1,23 @@
+{
+  "name": "Fordrinking",
+  "version": "0.0.0",
+  "authors": [
+    "Hill1942"
+  ],
+  "description": "A social website",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.1"
+  }
+}
