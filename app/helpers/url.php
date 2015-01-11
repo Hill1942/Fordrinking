@@ -28,7 +28,7 @@ class Url {
 	 * @return string url to template folder
 	 */
 	public static function template_path(){
-		return DIR.'app/templates/'.Session::get('template').'/';
+		return DIR.'app/templates/';
 	}
 
 	/**

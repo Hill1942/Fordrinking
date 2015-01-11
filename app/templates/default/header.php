@@ -4,14 +4,13 @@
 
 	<!-- Site meta -->
 	<meta charset="utf-8">
-	<title><?php echo $data['title'].' - '.SITETITLE; //SITETITLE defined in app/core/config.php ?></title>
+	<title><?php echo $data['title'].' - '.SITETITLE; ?></title>
 
 	<!-- CSS -->
 	<?php
-		helpers\assets::css(array(
-			'//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css',
-			helpers\url::template_path() . 'css/style.css',
-		))
+	helpers\assets::css(array(
+		helpers\url::template_path() . 'assets/css/style.css',
+	))
 	?>
 
 </head>

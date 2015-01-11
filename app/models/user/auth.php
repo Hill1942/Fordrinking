@@ -1,11 +1,12 @@
 <?php
 /**
- * User: kaidi
- * Date: 01/11, 2015
- * Time: 21:51
+ *
+ * Author:  kaidi - ykdacd@outlook.com
+ * Version: 0.1
+ * Date:    01/11, 2015
  */
 
-namespace models;
+namespace models\user;
 
 
 class Auth extends \core\model {
