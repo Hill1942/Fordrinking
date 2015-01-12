@@ -5,7 +5,7 @@
                 <input class="form-item-t" name="username" type="text" placeholder="Email">
             </div>
             <div class="form-item">
-                <input class="form-item-t" name="password" type="text" placeholder="Password">
+                <input class="form-item-t" name="password" type="password" placeholder="Password">
             </div>
         </form>
         <div class="login-submit">
