@@ -18,20 +18,37 @@ class Auth extends \core\controller {
 
     public function login() {
 
+        if(Session::get('loggedin')){
+            Url::redirect('home');
+        }
+
         $data['title'] = 'Login';
 
         $model = new \models\user\auth();
 
 
-        if (isset($_POST['submit'])) {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
+        if (isset($_POST['loginBtn'])) {
+            $username = $_POST['loginName'];
+            $password = $_POST['loginPass'];
+
+            if ($model->isUserExist($username)) {
+
+                if($password == $model->getPassword($username)){
+                    Session::set('loggedin', true);
+                    Url::redirect('home');
+                } else {
+                    $error = 'Wrong Password !';
+                }
+            } else {
+                $error = "User Not Exist !";
+            }
+            $data['user'] = $username;
         }
 
 
         View::rendertemplate('header', $data);
-        View::render('welcome/headbar', $data);
-        View::render('user/login', $data);
+        View::render('home/headbar', $data);
+        View::render('user/login', $data, $error);
         View::rendertemplate('footer',$data);
 
 
@@ -39,7 +56,8 @@ class Auth extends \core\controller {
     }
 
     public function logout() {
-
+        Session::destroy();
+        Url::redirect('login');
     }
 
 

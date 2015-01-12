@@ -20,7 +20,7 @@ class Config {
 		define('DIR', 'http://example.com/');
 
 		//set default controller and method for legacy calls
-		define('DEFAULT_CONTROLLER', 'welcome');
+		define('DEFAULT_CONTROLLER', 'home');
 		define('DEFAULT_METHOD' , 'index');
 
 		//set a default language

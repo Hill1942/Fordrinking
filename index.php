@@ -64,7 +64,8 @@ use \core\router,
     \helpers\url;
 
 //define routes
-Router::any('', '\controllers\welcome@index');
+Router::any('home', '\controllers\home@index');
+Router::any('', '\controllers\user\signup@index');
 Router::any('login', '\controllers\user\auth@login');
 Router::any('logout', '\controllers\user\auth@logout');
 

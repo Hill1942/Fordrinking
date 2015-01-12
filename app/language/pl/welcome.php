@@ -5,15 +5,15 @@ return array(
 	// Welcome method
 	'welcome_text' => 'Witaj',
 	'welcome_message' => '
-		Cześć, witaj z kontrolera welcome! <br/>
-		Tą treść możesz zmienić w pliku <code>/app/views/welcome/welcome.php</code>
+		Cześć, witaj z kontrolera home! <br/>
+		Tą treść możesz zmienić w pliku <code>/app/views/home/home.php</code>
 	',
 
 	// Subpage method
 	'subpage_text' => 'Podstrona',
 	'subpage_message' => '
-		Cześć, witaj z kontrolera welcome i metody subpage! <br/>
-		Tą treść możesz zmienić w pliku <code>/app/views/welcome/subpage.php</code>
+		Cześć, witaj z kontrolera home i metody subpage! <br/>
+		Tą treść możesz zmienić w pliku <code>/app/views/home/subpage.php</code>
 	',
 
 	// Buttons
