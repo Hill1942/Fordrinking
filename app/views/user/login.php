@@ -1,11 +1,17 @@
-<?php echo \core\error::display($error); ?>
-
-<div class='well login'>
-    <form action='' method='post'>
-
-        <p>Username<br><input type="text" class='form-control' name="username" value=""></p>
-        <p>Password<br><input type="password" class='form-control' name="password" value=""></p>
-        <p><input type="submit" name="submit" class='btn btn-success btn-sm' value="Login"></p>
-
-    </form>
+<div class="login-c">
+    <div class="login">
+        <form class="login-form" action='' method='post'>
+            <div class="form-item" style="margin-bottom:1px">
+                <input class="form-item-t" name="username" type="text" placeholder="Email">
+            </div>
+            <div class="form-item">
+                <input class="form-item-t" name="password" type="text" placeholder="Password">
+            </div>
+        </form>
+        <div class="login-submit">
+            <button class="login-btn">Log in</button>
+        </div>
+    </div>
 </div>
+
+

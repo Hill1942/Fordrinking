@@ -1,1 +1,173 @@
-/* Your styles here */
+@import "lib.css";
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFAEAE;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.head-bar-c {
+    height: 60px;
+    background-color: #B09AC2;
+}
+
+.head-bar {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    .head-bar {
+        width:750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .head-bar {
+        width:970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .head-bar {
+        width:1170px;
+    }
+}
+
+.h-search {
+
+}
+
+.h-search-img {
+    margin: 5px 10px;
+}
+
+.h-search-item {
+    margin: 14px 15px;
+    position: relative;
+}
+
+.h-search-item span {
+    position: absolute;
+    right: 6px;
+    top: 10px;
+}
+
+
+
+.h-search-i {
+    border: 1px solid #B09AC2;
+    margin: 0;
+    padding: 3px 5px;
+    height: 24px;
+    width: 320px;
+    outline: none;
+    font-size: 16px;
+}
+
+.h-search-i:after {
+
+}
+
+.h-user {
+
+}
+
+.h-tab-row {
+    height: 36px;
+    margin: 20px 15px 4px 15px;
+}
+
+.tab {
+    float: left;
+    margin: 0 12px;
+    cursor: pointer;
+}
+
+.tab a {
+    text-decoration: none;
+    font-size: 22px;
+    color: #8C62AE;
+}
+
+.h-tab-s {
+    vertical-align: middle;
+    display: inline-block;
+    margin-bottom: 8px;
+    margin-left: 6px;
+    font-size: 16px;
+    color: #57248E;
+}
+
+.login-c {
+    padding-bottom: 100px;
+    padding-top: 160px;
+    background-color: #FFAEAE;
+}
+
+.login {
+    width: 400px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.login-form {
+
+}
+
+.form-item {
+    height: 42px;
+}
+
+.form-item-t {
+    width: 280px;
+    border: none;
+    height: 36px;
+    outline: none;
+    padding: 3px 12px;
+    font-size: 16px;
+}
+
+.login-btn {
+    width: 304px;
+    border: none;
+    background-color: #FF5151;
+    color: #fff;
+    height: 40px;
+    font-size: 18px;
+}
+
+.login-submit {
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

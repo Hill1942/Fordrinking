@@ -20,19 +20,20 @@ class Auth extends \core\controller {
 
         $data['title'] = 'Login';
 
-        $model = new \models\user\Auth();
-
+        $model = new \models\user\auth();
 
 
         if (isset($_POST['submit'])) {
-
             $username = $_POST['username'];
             $password = $_POST['password'];
         }
 
+
         View::rendertemplate('header', $data);
+        View::render('welcome/headbar', $data);
         View::render('user/login', $data);
         View::rendertemplate('footer',$data);
+
 
 
     }
