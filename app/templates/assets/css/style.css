@@ -15,6 +15,46 @@ body {
     float: right;
 }
 
+.pos-rel {
+    position: relative;
+}
+
+.pos-abs {
+    position: absolute;
+}
+
+.pos-fix {
+    position: fixed;
+}
+
+.pos-sta {
+    position: static;
+}
+
+.mar-r-10 {
+    margin-right: 10px;
+}
+
+.mar-l-10 {
+    margin-left: 10px;
+}
+
+.mar-t-10 {
+    margin-top: 10px;
+}
+
+.mar-b-10 {
+    margin-bottom: 10px;
+}
+
+.mar-rl-10 {
+    margin: 0 10px;
+}
+
+.mar-tb-10 {
+    margin: 10px 0;
+}
+
 .alert {
     margin: 10px 0;
     text-align: center;
@@ -137,7 +177,7 @@ body {
     cursor: pointer;
 }
 
-.tab a {
+.tab > a {
     text-decoration: none;
     font-size: 22px;
     color: #8C62AE;
@@ -150,6 +190,26 @@ body {
     margin-left: 6px;
     font-size: 16px;
     color: #57248E;
+}
+
+#userSetting {
+    position: absolute;
+    left: 0;
+    background-color: #575757;
+    padding: 5px 15px 5px 15px;
+    width: 100px;
+    color: #fff;
+}
+
+#userSetting ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.h-user-s-a {
+    text-decoration: none;
+    color: #fff;
 }
 
 .login-c {

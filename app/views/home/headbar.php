@@ -25,9 +25,25 @@
                         <a class="glyphicon glyphicon-envelope" href="#"></a>
                         <span class="h-tab-s">Message</span>
                     </div>
-                    <div id="$userSettingBtn" class="tab left">
+                    <div id="userSettingBtn" class="tab left pos-rel">
                         <a class="glyphicon glyphicon-user" href="#"></a>
                         <span class="h-tab-s">Setting</span>
+                        <div id="userSetting">
+                            <ul>
+                                <li class="mar-tb-10">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                    <span class="mar-l-10"><a href="#" class="h-user-s-a">Account</a></span>
+                                </li>
+                                <li class="mar-tb-10">
+                                    <span class="glyphicon glyphicon-question-sign"></span>
+                                    <span class="mar-l-10"><a href="#" class="h-user-s-a">Help</a></span>
+                                </li>
+                                <li class="mar-tb-10">
+                                    <span class="glyphicon glyphicon-off"></span>
+                                    <span class="mar-l-10"><a href="/logout" class="h-user-s-a">Logout</a></span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 <?php } else { ?>
 

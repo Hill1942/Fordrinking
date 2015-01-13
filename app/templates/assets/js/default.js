@@ -5,7 +5,8 @@
 (function ($) {
 
     var $loginBtn       = $("#signupBtn");
-    var $userSettingBtn = $("#$userSettingBtn");
+    var $userSettingBtn = $("#userSettingBtn");
+    var $userSetting    = $("#userSetting");
 
     function signupBtnClicker() {
 
@@ -29,18 +30,30 @@
         });
     }
 
-    function userSettingBtnHover() {
+    function userSettingBtnHover(e) {
+
+        if (e.type == "mouseenter") {
+            $userSetting.slideDown();
+        } else if (e.type == "mouseleave") {
+            $userSetting.slideUp();
+        }
 
     }
 
     var app = {
 
+        init: function() {
+            $userSetting.hide();
+        },
+
         addEvent: function() {
             $loginBtn.on("click", signupBtnClicker);
-            $userSettingBtn.on("hover", userSettingBtnHover);
+            $userSettingBtn.on("mouseenter", userSettingBtnHover)
+                           .on("mouseleave", userSettingBtnHover)
         },
 
         run: function() {
+            this.init();
             this.addEvent();
         }
     };
