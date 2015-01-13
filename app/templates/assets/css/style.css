@@ -158,6 +158,13 @@ body {
     background-color: #FFAEAE;
 }
 
+.signup-c {
+    padding-bottom: 100px;
+    padding-top: 160px;
+    background-color: #FFAEAE;
+}
+
+
 .login {
     width: 304px;
     padding-right: 15px;
@@ -166,9 +173,44 @@ body {
     margin-left: auto;
 }
 
-.login-form {
-
+#login-extra {
+    text-align: center;
+    margin-top: 15px;
 }
+
+#login-extra a {
+    text-align: center;
+    font-size: 16px;
+    color: #E00000;
+}
+
+#login-extra a:hover {
+    color: #e04e74;
+}
+
+.signup {
+    width: 304px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#signup-extra {
+    text-align: center;
+    margin-top: 15px;
+}
+
+#signup-extra a {
+    text-align: center;
+    font-size: 16px;
+    color: #E00000;
+}
+
+#signup-extra a:hover {
+    color: #e04e74;
+}
+
 
 .form-item {
     height: 42px;
@@ -183,7 +225,7 @@ body {
     font-size: 16px;
 }
 
-.login-btn {
+.form-btn {
     width: 304px;
     border: none;
     background-color: #FF5151;
@@ -192,7 +234,7 @@ body {
     font-size: 18px;
 }
 
-.login-submit {
+.form-submit {
     margin-top: 30px;
 }
 

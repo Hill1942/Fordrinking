@@ -19,14 +19,19 @@
                     <a class="glyphicon glyphicon-globe" href="#"></a>
                     <span class="h-tab-s">Explore</span>
                 </div>
-                <div class="tab left">
-                    <a class="glyphicon glyphicon-envelope" href="#"></a>
-                    <span class="h-tab-s">Message</span>
-                </div>
-                <div class="tab left">
-                    <a class="glyphicon glyphicon-user" href="#"></a>
-                    <span class="h-tab-s">Setting</span>
-                </div>
+                <?php if (isset($_SESSION[SESSION_PREFIX.'loggedin']) &&
+                          $_SESSION[SESSION_PREFIX.'loggedin']) { ?>
+                    <div class="tab left">
+                        <a class="glyphicon glyphicon-envelope" href="#"></a>
+                        <span class="h-tab-s">Message</span>
+                    </div>
+                    <div id="$userSettingBtn" class="tab left">
+                        <a class="glyphicon glyphicon-user" href="#"></a>
+                        <span class="h-tab-s">Setting</span>
+                    </div>
+                <?php } else { ?>
+
+                <?php } ?>
             </div>
         </div>
     </div>

@@ -8,8 +8,11 @@
             <div class="form-item">
                 <input class="form-item-t" name="loginPass" type="password" placeholder="Password">
             </div>
-            <div class="login-submit">
-                <input class="login-btn" name="loginBtn" type="submit" value="Log in">
+            <div class="form-submit">
+                <input class="form-btn" name="loginBtn" type="submit" value="Log in">
+            </div>
+            <div id="login-extra" class="form-item">
+                <a href="/">Not have an Account? Sign up</a>
             </div>
         </form>
 

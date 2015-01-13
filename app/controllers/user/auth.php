@@ -8,10 +8,9 @@
 
 namespace controllers\user;
 
-use \helpers\password,
-    \helpers\session,
-    \helpers\url,
-    \core\view;
+use \helpers\session;
+use \helpers\url;
+use \core\view;
 
 
 class Auth extends \core\controller {
@@ -24,7 +23,7 @@ class Auth extends \core\controller {
 
         $data['title'] = 'Login';
 
-        $model = new \models\user\auth();
+        $model = new \models\user\userManager();
 
 
         if (isset($_POST['loginBtn'])) {

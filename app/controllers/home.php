@@ -1,11 +1,10 @@
 <?php namespace controllers;
 
-/*
- * Welcome controller
+/**
  *
- * @author David Carr - dave@daveismyname.com - http://www.daveismyname.com
- * @version 2.1
- * @date June 27, 2014
+ * Author:  kaidi - ykdacd@outlook.com
+ * Version: 0.1
+ * Date:    01/11, 2015
  */
 
 use core\view;
