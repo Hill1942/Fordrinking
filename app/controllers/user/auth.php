@@ -34,6 +34,7 @@ class Auth extends \core\controller {
 
                 if($password == $model->getPassword($username)){
                     Session::set('loggedin', true);
+                    Session::set('currentUser', $username);
                     Url::redirect('home');
                 } else {
                     $error = 'Wrong Password !';

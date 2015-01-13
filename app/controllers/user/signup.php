@@ -55,6 +55,7 @@ class Signup extends \core\controller {
             $model->addUser($data);
 
             Session::set('loggedin', true);
+            Session::set('currentUser', $username);
             echo "user-added";
             //Url::redirect('home');
         }

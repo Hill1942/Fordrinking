@@ -1,3 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFAEAE;
+    font-family: Avenir,Lucida Grande,Calibri,Trebuchet MS,Helvetica,Arial,Hiragino Sans GB,WenQuanYi Micro Hei,STHeiti,Microsoft Jhenghei,Nanum Gothic,sans-serif;;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.pos-rel {
+    position: relative;
+}
+
+.pos-abs {
+    position: absolute;
+}
+
+.pos-fix {
+    position: fixed;
+}
+
+.pos-sta {
+    position: static;
+}
+
+.mar-r-10 {
+    margin-right: 10px;
+}
+
+.mar-l-10 {
+    margin-left: 10px;
+}
+
+.mar-t-10 {
+    margin-top: 10px;
+}
+
+.mar-b-10 {
+    margin-bottom: 10px;
+}
+
+.mar-rl-10 {
+    margin: 0 10px;
+}
+
+.mar-tb-10 {
+    margin: 10px 0;
+}
+
+.alert {
+    margin: 10px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.alert-danger {
+    color: #f00;
+}
+
+
+
+
+
+
+
 @font-face {
     font-family: 'Glyphicons Halflings';
 
@@ -617,7 +688,6 @@
 .glyphicon-tree-deciduous:before {
     content: "\e200";
 }
-
 
 
 

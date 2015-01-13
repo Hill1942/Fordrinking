@@ -1,0 +1,97 @@
+.post-c {
+    height: 160px;
+}
+
+.post {
+
+}
+
+.post-user {
+    float: left;
+}
+
+.post-user-img {
+    width: 64px;
+    height: 64px;
+}
+
+.post-action {
+    float: right;
+    width: 542px;
+}
+
+.post-a-text {
+    width: 520px;
+    height: 80px;
+    border: 1px solid #E47010;
+    float: right;
+    outline: none;
+    resize: none;
+    padding: 5px 10px;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.15) inset;
+}
+
+.blogs-c {
+
+}
+
+.blogs {
+
+}
+
+.blog-item {
+    clear: both;
+    width: 625px;
+    margin-bottom: 30px;
+}
+
+.blog-user {
+    float: left;
+}
+
+.blog-c {
+    margin-left: 85px;
+    background-color: #fff;
+}
+
+.blog-title {
+    height: 20px;
+    padding: 15px;
+}
+
+.blog-username {
+    float: left;
+}
+
+.blog-date {
+    float: right;
+}
+
+.blog-body {
+    padding: 0 15px;
+}
+
+.blog-footer {
+    padding: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

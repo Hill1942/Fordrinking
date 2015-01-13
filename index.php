@@ -72,6 +72,8 @@ Router::any('signup-check', '\controllers\user\signup@check');
 Router::any('login', '\controllers\user\auth@login');
 Router::any('logout', '\controllers\user\auth@logout');
 
+Router::any('post-text', '\controllers\user\user@post');
+
 //if no route found
 Router::error('\core\error@index');
 

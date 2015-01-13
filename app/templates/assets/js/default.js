@@ -7,6 +7,7 @@
     var $loginBtn       = $("#signupBtn");
     var $userSettingBtn = $("#userSettingBtn");
     var $userSetting    = $("#userSetting");
+    var $postSubmit     = $("#postSubmit");
 
     function signupBtnClicker() {
 
@@ -40,6 +41,16 @@
 
     }
 
+    function postSubmitBtnClicker() {
+        $.ajax({
+            url: "post-text",
+            type: "post",
+            data: {
+                content: $("#postText").val()
+            }
+        })
+    }
+
     var app = {
 
         init: function() {
@@ -49,7 +60,8 @@
         addEvent: function() {
             $loginBtn.on("click", signupBtnClicker);
             $userSettingBtn.on("mouseenter", userSettingBtnHover)
-                           .on("mouseleave", userSettingBtnHover)
+                           .on("mouseleave", userSettingBtnHover);
+            $postSubmit.on("click", postSubmitBtnClicker);
         },
 
         run: function() {
