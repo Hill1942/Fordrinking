@@ -8,18 +8,61 @@
 
 namespace models;
 
+use helpers\session;
+
 
 class BlogManager extends \core\model {
 
-    private static $index = 0;
+    //private static $index = 5;
 
 
+    /**
+     * @param $num
+     * @return array
+     */
+    public function getNewestBlog($num) {
+
+        $data = $this->_db->select("
+			SELECT
+				".PREFIX."posts.user,
+				".PREFIX."posts.content,
+				".PREFIX."posts.postDate,
+				".PREFIX."members.avatar
+			FROM
+				".PREFIX."posts,
+				".PREFIX."members
+			WHERE
+				".PREFIX."posts.user = ".PREFIX."members.username
+			ORDER BY
+				pid DESC "."limit :num",
+            array(':num' => $num));
+
+        return $data;
+    }
+
+    /**
+     * @param $num
+     * @return array
+     */
     public function getNextBlog($num) {
-        $data = $this->_db->select("select user, content, postDate from ".PREFIX."posts limit :index, :num",
-            array(':index' => self::$index,
-                  ':num'   => $num));
 
-        self::$index += $num;
+        $index = intval($_POST['blogIndex']);
+
+        $data = $this->_db->select("
+			SELECT
+				".PREFIX."posts.user,
+				".PREFIX."posts.content,
+				".PREFIX."posts.postDate,
+				".PREFIX."members.avatar
+			FROM
+				".PREFIX."posts,
+				".PREFIX."members
+			WHERE
+				".PREFIX."posts.user = ".PREFIX."members.username
+			ORDER BY
+				pid DESC "."limit :index, :num",
+            array(':num'   => $num,
+                  ':index' => $index));
 
         return $data;
 

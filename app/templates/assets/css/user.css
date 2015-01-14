@@ -1,6 +1,9 @@
 .head-bar-c {
     height: 60px;
-    background-color: #B09AC2;
+    background-color: #263238;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
 }
 
 .head-bar {
@@ -46,17 +49,20 @@
     position: absolute;
     right: 6px;
     top: 10px;
+    color: #ACB5B1;
 }
 
 
 
 .h-search-i {
-    border: 1px solid #B09AC2;
+    border: 1px solid #80CBC4;
     margin: 0;
-    padding: 3px 5px;
+    padding: 3px 10px;
     height: 24px;
     outline: none;
     font-size: 16px;
+    background-color: #37474F;
+    color: #B5B5B5;
 }
 
 .icon--bar {
@@ -113,7 +119,7 @@
 .tab > a {
     text-decoration: none;
     font-size: 22px;
-    color: #8C62AE;
+    color: #80CBC4;
 }
 
 .h-tab-s {
@@ -122,7 +128,7 @@
     margin-bottom: 8px;
     margin-left: 6px;
     font-size: 16px;
-    color: #57248E;
+    color: #B5B5B5;
 }
 
 #userSetting {
@@ -147,14 +153,14 @@
 
 .login-c {
     padding-bottom: 100px;
-    padding-top: 160px;
-    background-color: #FFAEAE;
+    padding-top: 240px;
+    background-color: #37474F;
 }
 
 .signup-c {
     padding-bottom: 100px;
     padding-top: 160px;
-    background-color: #FFAEAE;
+    background-color: #37474F;
 }
 
 

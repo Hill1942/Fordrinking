@@ -74,6 +74,7 @@ Router::any('logout', '\controllers\user\auth@logout');
 
 Router::any('post-text', '\controllers\user\user@post');
 
+Router::any('more-blog', '\controllers\home@moreBlogs');
 //if no route found
 Router::error('\core\error@index');
 

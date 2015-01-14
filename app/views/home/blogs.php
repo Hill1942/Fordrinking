@@ -1,4 +1,5 @@
 <div class="blogs-c">
+    <input type="hidden" id="blogIndex" value="<?php echo $data['blogIndex']; ?>">
     <div class="blogs">
         <?php
         if($data['posts']){

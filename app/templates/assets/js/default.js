@@ -4,6 +4,8 @@
 
 (function ($) {
 
+    var blogIndex       = parseInt($("#blogIndex").val());
+
     var $loginBtn       = $("#signupBtn");
     var $userSettingBtn = $("#userSettingBtn");
     var $userSetting    = $("#userSetting");
@@ -47,8 +49,32 @@
             type: "post",
             data: {
                 content: $("#postText").val()
+            },
+            success: function(value) {
+                $(".blogs").prepend(value);
             }
         })
+    }
+
+    function loadingMoreBlogs() {
+        var clientHeight = $(window).height();
+        var scrollTop = $(document).scrollTop();
+        var scrollHeight = document.body.scrollHeight;
+
+        if(clientHeight + scrollTop >= scrollHeight){
+            $.ajax({
+                url: "more-blog",
+                type: "post",
+                data: {
+                    blogIndex: blogIndex
+                },
+                success: function (data) {
+                    $(".blogs").append(data);
+                    blogIndex += 5;
+                }
+            });
+
+        }
     }
 
     var app = {
@@ -58,6 +84,7 @@
         },
 
         addEvent: function() {
+            $(document).on("scroll", loadingMoreBlogs);
             $loginBtn.on("click", signupBtnClicker);
             $userSettingBtn.on("mouseenter", userSettingBtnHover)
                            .on("mouseleave", userSettingBtnHover);

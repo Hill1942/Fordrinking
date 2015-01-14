@@ -20,16 +20,66 @@
     width: 542px;
 }
 
+#postTextAngle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 0px solid transparent;
+    border-top: 15px solid #006A79;
+    left: -14px;
+    top: 1px;
+}
+
 .post-a-text {
     width: 520px;
     height: 80px;
-    border: 1px solid #E47010;
+    border: 1px solid #37474F;
     float: right;
     outline: none;
     resize: none;
     padding: 5px 10px;
-    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.15) inset;
+    background-color: #006A79;
+    color: #DDDDDD;
+    font-size: 14px;
 }
+
+.post-action-text {
+    height: 100px;
+    position: relative;
+}
+.post-action-bar {
+    height: 36px;
+}
+
+.post-ab-l {
+    float: left;
+    font-size: 18px;
+    color: #ACB5B1;
+    margin-top: 5px;
+}
+
+.post-ab-t {
+    font-size: 14px;
+    margin-bottom: 5px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.post-ab-r {
+    float: right;
+}
+
+#postSubmit {
+    border: none;
+    background-color: #80CBC4;
+    color: #515151;
+    height: 32px;
+    width: 80px;
+    font-size: 18px;
+}
+
+
 
 .blogs-c {
 
@@ -51,7 +101,9 @@
 
 .blog-c {
     margin-left: 85px;
-    background-color: #fff;
+    background-color: #80CBC4;
+    color: #515151;
+    word-spacing: 1px;
 }
 
 .blog-title {

@@ -25,7 +25,10 @@ class Home extends \core\controller {
 
 		$model = new \models\blogManager();
 
-		$data['posts'] = $model->getNextBlog(20);
+		$data['posts'] = $model->getNewestBlog(5);
+
+		$data['blogIndex'] = 5;
+
 		
 		View::rendertemplate('header', $data);
 		View::render('home/headbar', $data);
@@ -34,6 +37,35 @@ class Home extends \core\controller {
 		View::render('home/blogs', $data);
 		View::render('home/sidebar', $data);
 		View::rendertemplate('footer', $data);
+	}
+
+	public function moreBlogs() {
+
+		$model = new \models\blogManager();
+
+		$data['posts'] = $model->getNextBlog(5);
+		$avatar  = Url::template_path() . 'assets/img/default-avatar.png';
+
+		if($data['posts']){
+			foreach($data['posts'] as $row){
+				echo "<div class='blog-item'>\n";
+				echo     "<div class='blog-user'>\n";
+				echo         "<img class='post-user-img left' src='$avatar'>\n";
+				echo     "</div>\n";
+				echo     "<div class='blog-c'>\n";
+				echo         "<div class='blog-title'>\n";
+				echo             "<div class='blog-username'>$row->user</div>\n";
+				echo             "<div class='blog-date'>$row->postDate</div>\n";
+				echo         "</div>\n";
+				echo         "<div class='blog-body'>\n";
+				echo         $row->content;
+				echo         "</div>\n";
+				echo         "<div class='blog-footer'>\n";
+				echo         "</div>\n";
+				echo     "</div>\n";
+				echo "</div>\n";
+			}
+		}
 	}
 
 }

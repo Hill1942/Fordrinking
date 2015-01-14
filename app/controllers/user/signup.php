@@ -49,13 +49,15 @@ class Signup extends \core\controller {
             $data = array(
                 'username' => $username,
                 'password' => $password,
-                'email'    => $email
+                'email'    => $email,
+                'avatar'   => \helpers\url::template_path() . 'assets/img/default-avatar.png'
             );
 
             $model->addUser($data);
 
-            Session::set('loggedin', true);
+            Session::set('loggedin',    true);
             Session::set('currentUser', $username);
+            Session::set('blogIndex',   0);
             echo "user-added";
             //Url::redirect('home');
         }
