@@ -1,12 +1,12 @@
-<?php namespace helpers;
+<?php namespace core;
 
 use \PDO;
 
 /*
  * database Helper - extending PDO to use custom methods
  *
- * @author David Carr - dave@daveismyname.com - http://www.daveismyname.com
- * @version 2.1
+ * @author David Carr , Yang Kaidi
+ * @version 0.1
  * @date June 27, 2014
  */
 class Database extends PDO{
@@ -20,7 +20,7 @@ class Database extends PDO{
 	 * Static method get 
 	 * 
 	 * @param  array $group
-	 * @return \helpers\database
+	 * @return \core\database
 	 */
 	public static function get ($group = false) {
 		// Determining if exists or it's not empty, then use default group defined in config
