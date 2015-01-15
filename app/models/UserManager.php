@@ -14,10 +14,6 @@ use models\user\User;
 
 class UserManager extends Manager {
 
-    /*public function __construct() {
-       parent::openDB();
-    }*/
-
     /**
      * @param string $email
      * @return bool
