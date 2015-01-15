@@ -12,11 +12,11 @@ namespace models;
 use daos\UserDao;
 use models\user\User;
 
-class UserManager {
+class UserManager extends Manager {
 
-    public function __construct() {
-        UserDao::openDB();
-    }
+    /*public function __construct() {
+       parent::openDB();
+    }*/
 
     /**
      * @param string $email
@@ -68,6 +68,11 @@ class UserManager {
     public function getPassword($uid) {
         $data = UserDao::getPassword($uid);
         return $data[0]->password;
+    }
+
+    public function getAvatar($uid) {
+        $data = UserDao::getAvatar($uid);
+        return $data[0]->avatar;
     }
 
     /**

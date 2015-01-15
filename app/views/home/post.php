@@ -2,7 +2,7 @@
     <div class="post">
 
         <div class="post-user">
-            <img class="post-user-img left" src="<?php echo \helpers\url::template_path() . 'assets/img/head.png' ?>">
+            <img class="post-user-img left" src="<?php echo $data['avatar']; ?>">
         </div>
         <div class="post-action">
             <div class="post-action-text">

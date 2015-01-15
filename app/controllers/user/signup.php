@@ -45,8 +45,10 @@ class Signup extends \core\controller {
 
         $manager->addUser($username, $password, $email);
 
+        $uid = $manager->getUID($email);
+
         Session::set('loggedin',    true);
-        Session::set('currentUser', $username);
+        Session::set('currentUser', $uid);
 
         echo "user-added";
     }

@@ -6,11 +6,11 @@
             foreach($data['posts'] as $row){ ?>
             <div class="blog-item">
                 <div class="blog-user">
-                    <img class="post-user-img left" src="<?php echo \helpers\url::template_path() . 'assets/img/head.png'; ?>">
+                    <img class="post-user-img left" src="<?php echo $row->avatar; ?>">
                 </div>
                 <div class="blog-c">
                     <div class="blog-title">
-                        <div class="blog-username"><?php echo $row->user; ?></div>
+                        <div class="blog-username"><?php echo $row->username; ?></div>
                         <div class="blog-date"><?php echo $row->postDate; ?></div>
                     </div>
                     <div class="blog-body">

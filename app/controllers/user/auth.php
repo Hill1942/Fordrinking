@@ -46,10 +46,10 @@ class Auth extends \core\controller {
             $data['email'] = $email;
         }
 
-        View::rendertemplate('header', $data);
-        View::render('home/headbar', $data);
-        View::render('user/login', $data, $error);
-        View::rendertemplate('footer',$data);
+        View::rendertemplate('header' ,$data);
+        View::render('home/headbar'   ,$data);
+        View::render('user/login'     ,$data, $error);
+        View::rendertemplate('footer' ,$data);
     }
 
     public function logout() {
