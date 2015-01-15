@@ -12,6 +12,12 @@ use core\Dao;
 
 class BlogDao extends Dao {
 
+	/**
+	 * @param $data
+     */
+	public static function postBlog($data) {
+		self::$_db->insert("fd_posts", $data);
+	}
 
     /**
      * @param $num

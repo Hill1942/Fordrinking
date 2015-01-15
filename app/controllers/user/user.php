@@ -13,24 +13,22 @@ namespace controllers\user;
 use core\Controller;
 use helpers\Url;
 use helpers\Session;
+use models\BlogModel;
+use models\UserModel;
 
 class User extends Controller {
 
     public function post() {
+        $blogModel = new BlogModel();
+        $userModel = new UserModel();
 
-        $model = new \models\user\user();
+        $uid       = Session::get("currentUser");
+        $user      = $userModel->getUsername($uid);
+        $content   = $_POST['content'];
+        $avatar    = $userModel->getAvatar($uid);
+        $date      = date('y-m-d H:i:s', time());
 
-        $user    = Session::get("currentUser");
-        $content = $_POST['content'];
-        $date    = date('y-m-d h:i:s',time());
-        $avatar  = Url::template_path() . 'assets/img/default-avatar.png';
-
-        $data = array(
-            'user'    => $user,
-            'content' => $content
-        );
-
-        $model->post($data);
+        $blogModel->postBlog($content, $user);
 
         echo "<div class='blog-item'>\n";
         echo     "<div class='blog-user'>\n";
@@ -48,10 +46,7 @@ class User extends Controller {
         echo         "</div>\n";
         echo     "</div>\n";
         echo "</div>\n";
-
     }
-
-
 }
 
 

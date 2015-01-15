@@ -8,13 +8,24 @@
 
 namespace models;
 
-
 use core\Model;
-use core\Dao;
 use daos\BlogDao;
 
 
 class BlogModel extends Model {
+
+    /**
+     * @param $content
+     * @param $user
+     */
+    public function postBlog($content, $user) {
+        $data = array(
+            'user'    => $user,
+            'content' => $content
+        );
+
+        BlogDao::postBlog($data);
+    }
 
     /**
      * @param $num

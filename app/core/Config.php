@@ -47,11 +47,10 @@ class Config {
 		set_error_handler('core\logger::error_handler');
 
 		//set timezone
-		date_default_timezone_set('Europe/London');
+		date_default_timezone_set('Asia/Shanghai');
 
 		//start sessions
 		Session::init();
-
 
 		//set the default template
 		Session::set('template', 'default');
