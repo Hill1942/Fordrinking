@@ -10,6 +10,7 @@
     var $userSettingBtn = $("#userSettingBtn");
     var $userSetting    = $("#userSetting");
     var $postSubmit     = $("#postSubmit");
+    var $postText       = $("#postText");
 
     function signupBtnClicker() {
 
@@ -81,6 +82,7 @@
 
         init: function() {
             $userSetting.hide();
+            $postText.focus();
         },
 
         addEvent: function() {

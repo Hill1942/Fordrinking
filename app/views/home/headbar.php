@@ -5,7 +5,7 @@
             <!--  -->
             <img class="h-search-img left" src="<?php echo \helpers\url::template_path() . 'assets/img/fordrinking-logo.png' ?>">
             <div class="h-search-item left">
-                <input class="h-search-i" type="text" id="h-search-input">
+                <input class="h-search-i" type="text" id="h-search-input" placeholder="search and find">
                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
             </div>
         </div>
