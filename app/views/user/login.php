@@ -3,7 +3,7 @@
         <?php echo \core\error::display($error); ?>
         <form class="login-form" action='' method='post'>
             <div class="form-item" style="margin-bottom:1px">
-                <input class="form-item-t" name="loginName" type="text" value="<?php echo $data['user'] ?>" placeholder="Username">
+                <input class="form-item-t" name="loginMail" type="text" value="<?php echo $data['email'] ?>" placeholder="Email">
             </div>
             <div class="form-item">
                 <input class="form-item-t" name="loginPass" type="password" placeholder="Password">

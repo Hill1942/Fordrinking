@@ -11,49 +11,45 @@ namespace controllers\user;
 use \helpers\session;
 use \helpers\url;
 use \core\view;
+use models\UserManager;
 
 
 class Auth extends \core\controller {
 
     public function login() {
-
         if(Session::get('loggedin')){
             Url::redirect('home');
         }
 
         $data['title'] = 'Login';
 
-        $model = new \models\user\userManager();
-
+        $manager = new UserManager();
 
         if (isset($_POST['loginBtn'])) {
-            $username = $_POST['loginName'];
+            $email    = $_POST['loginMail'];
             $password = $_POST['loginPass'];
 
-            if ($model->isUserExist($username)) {
+            if ($manager->isMailExist($email)) {
+                $uid = $manager->getUID($email);
 
-                if($password == $model->getPassword($username)){
+                if($password == $manager->getPassword($uid)) {
                     Session::set('loggedin',    true);
-                    Session::set('currentUser', $username);
-                    Session::set('blogIndex',   0);
+                    Session::set('currentUser', $uid);
                     Url::redirect('home');
                 } else {
                     $error = 'Wrong Password !';
                 }
             } else {
-                $error = "User Not Exist !";
+                $error = "Mail Not Exist !";
             }
-            $data['user'] = $username;
-        }
 
+            $data['email'] = $email;
+        }
 
         View::rendertemplate('header', $data);
         View::render('home/headbar', $data);
         View::render('user/login', $data, $error);
         View::rendertemplate('footer',$data);
-
-
-
     }
 
     public function logout() {

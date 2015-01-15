@@ -23,19 +23,18 @@ class Home extends \core\controller {
 			Url::redirect('login');
 		}
 
-		$model = new \models\blogManager();
+		//$model = new \models\blogManager();
 
-		$data['posts'] = $model->getNewestBlog(5);
+		//$data['posts'] = $model->getNewestBlog(5);
 
 		$data['blogIndex'] = 5;
 
-		
 		View::rendertemplate('header', $data);
 		View::render('home/headbar', $data);
-		View::rendertemplate('framework', $data);
-		View::render('home/post', $data);
-		View::render('home/blogs', $data);
-		View::render('home/sidebar', $data);
+		//View::rendertemplate('framework', $data);
+		//View::render('home/post', $data);
+		//View::render('home/blogs', $data);
+		//View::render('home/sidebar', $data);
 		View::rendertemplate('footer', $data);
 	}
 
