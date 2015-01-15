@@ -8,8 +8,8 @@ if(file_exists('vendor/autoload.php')){
 	exit;
 }
 
-if (!is_readable('app/core/config.php')) {
-	die('No config.php found, configure and rename config.example.php to config.php in app/core.');
+if (!is_readable('app/core/Config.php')) {
+	die('No Config.php found, configure and rename config.example.php to Config.php in app/core.');
 }
 
 /*
@@ -57,11 +57,11 @@ if (defined('ENVIRONMENT')){
 }
 
 //initiate config
-new \core\config();
+new \core\Config();
 
 //create alias for Router
-use \core\router,
-    \helpers\url;
+use \core\Router,
+    \helpers\Url;
 
 //define routes
 Router::any('home', '\controllers\home@index');

@@ -6,11 +6,9 @@
  * Date:    01/15, 2015
  */
 
-namespace daos;
+namespace core;
 
-use core\database;
-
-class Dao {
+abstract class Dao {
 
     protected static $_db;
 

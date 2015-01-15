@@ -8,12 +8,13 @@
 
 namespace controllers\user;
 
-use core\view;
-use helpers\session;
-use helpers\url;
-use models\UserManager;
+use core\Controller;
+use core\View;
+use helpers\Session;
+use helpers\Url;
+use models\UserModel;
 
-class Signup extends \core\controller {
+class Signup extends Controller {
 
     public function index() {
         if (Session::get('loggedin')) {
@@ -31,21 +32,21 @@ class Signup extends \core\controller {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $manager = new UserManager();
+        $userModel = new UserModel();
 
-        if ($manager->isMailExist($email)) {
+        if ($userModel->isMailExist($email)) {
             echo "email-exist";
             return ;
         }
 
-        if ($manager->isMailExist($username)) {
+        if ($userModel->isMailExist($username)) {
             echo "user-exist";
             return;
         }
 
-        $manager->addUser($username, $password, $email);
+        $userModel->addUser($username, $password, $email);
 
-        $uid = $manager->getUID($email);
+        $uid = $userModel->getUID($email);
 
         Session::set('loggedin',    true);
         Session::set('currentUser', $uid);

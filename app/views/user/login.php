@@ -1,6 +1,6 @@
 <div class="login-c">
     <div class="login">
-        <?php echo \core\error::display($error); ?>
+        <?php echo \core\Error::display($error); ?>
         <form class="login-form" action='' method='post'>
             <div class="form-item" style="margin-bottom:1px">
                 <input class="form-item-t" name="loginMail" type="text" value="<?php echo $data['email'] ?>" placeholder="Email">

@@ -10,10 +10,11 @@ namespace controllers\user;
 
 
 
-use helpers\url;
+use core\Controller;
+use helpers\Url;
 use helpers\Session;
 
-class User extends \core\controller {
+class User extends Controller {
 
     public function post() {
 

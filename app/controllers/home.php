@@ -7,14 +7,15 @@
  * Date:    01/11, 2015
  */
 
-use core\view;
-use helpers\session;
-use helpers\url;
-use models\BlogManager;
-use models\UserManager;
+use core\Controller;
+use core\View;
+use helpers\Session;
+use helpers\Url;
+use models\BlogModel;
+use models\UserModel;
 
 
-class Home extends \core\controller {
+class Home extends Controller {
 
 	/**
 	 * Define Index page title and load template files
@@ -24,12 +25,12 @@ class Home extends \core\controller {
 			Url::redirect('login');
 		}
 
-		$blogManager = new BlogManager();
-		$userManager = new UserManager();
+		$blogModel = new BlogModel();
+		$userModel = new UserModel();
 
 
-		$data['posts']     = $blogManager->getNewestBlog(5);
-		$data['avatar']    = $userManager->getAvatar(Session::get("currentUser"));
+		$data['posts']     = $blogModel->getNewestBlog(5);
+		$data['avatar']    = $userModel->getAvatar(Session::get("currentUser"));
 		$data['blogIndex'] = 5;
 
 		View::rendertemplate('header', $data);
@@ -42,9 +43,9 @@ class Home extends \core\controller {
 	}
 
 	public function moreBlogs() {
-		$blogManager = new BlogManager();
+		$blogModel = new BlogModel();
 
-		$data['posts'] = $blogManager->getNextBlog($_POST['blogIndex'], 5);
+		$data['posts'] = $blogModel->getNextBlog($_POST['blogIndex'], 5);
 
 		if($data['posts']){
 			foreach($data['posts'] as $row){

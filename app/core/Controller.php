@@ -1,6 +1,4 @@
 <?php namespace core;
-use core\view,
-	core\language;
 
 /*
  * controller - base controller

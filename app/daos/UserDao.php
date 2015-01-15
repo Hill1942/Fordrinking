@@ -9,6 +9,8 @@
 namespace daos;
 
 
+use core\Dao;
+
 class UserDao extends Dao {
 
     public static function selectEmail($email) {

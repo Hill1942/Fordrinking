@@ -9,10 +9,10 @@
 namespace models;
 
 
+use core\Model;
 use daos\UserDao;
-use models\user\User;
 
-class UserManager extends Manager {
+class UserModel extends Model {
 
     /**
      * @param string $email

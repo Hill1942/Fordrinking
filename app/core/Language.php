@@ -34,7 +34,7 @@ class Language {
 		} else {
 
 			// display error
-			echo \core\error::display("Could not load language file '$code/$name.php'");
+			echo Error::display("Could not load language file '$code/$name.php'");
 			die;
 
 		}
@@ -77,7 +77,7 @@ class Language {
 		} else {
 
 			// display error
-			echo \core\error::display("Could not load language file '$code/$name.php'");
+			echo Error::display("Could not load language file '$code/$name.php'");
 			die;
 
 		}

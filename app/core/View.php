@@ -7,6 +7,8 @@
  * @version 2.1
  * @date June 27, 2014
  */
+use helpers\Session;
+
 class View {
 	
 	/**
@@ -39,7 +41,7 @@ class View {
 				header($header, true);
 			}
 		}
-		require "app/templates/". \helpers\Session::get('template') ."/$path.php";
+		require "app/templates/". Session::get('template') ."/$path.php";
 	}
 	
 	/**

@@ -8,17 +8,20 @@
 
 namespace models;
 
+
+use core\Model;
+use core\Dao;
 use daos\BlogDao;
 
 
-class BlogManager extends Manager {
+class BlogModel extends Model {
 
     /**
      * @param $num
      * @return array
      */
     public function getNewestBlog($num) {
-		$data = BlogDao::getNewestBlog($num);
+        $data = BlogDao::getNewestBlog($num);
 
         return $data;
     }

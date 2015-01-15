@@ -8,13 +8,14 @@
 
 namespace controllers\user;
 
-use \helpers\session;
-use \helpers\url;
-use \core\view;
-use models\UserManager;
+use core\Controller;
+use \helpers\Session;
+use \helpers\Url;
+use \core\View;
+use models\UserModel;
 
 
-class Auth extends \core\controller {
+class Auth extends Controller {
 
     public function login() {
         if(Session::get('loggedin')){
@@ -23,16 +24,16 @@ class Auth extends \core\controller {
 
         $data['title'] = 'Login';
 
-        $manager = new UserManager();
+        $userModel = new UserModel();
 
         if (isset($_POST['loginBtn'])) {
             $email    = $_POST['loginMail'];
             $password = $_POST['loginPass'];
 
-            if ($manager->isMailExist($email)) {
-                $uid = $manager->getUID($email);
+            if ($userModel->isMailExist($email)) {
+                $uid = $userModel->getUID($email);
 
-                if($password == $manager->getPassword($uid)) {
+                if($password == $userModel->getPassword($uid)) {
                     Session::set('loggedin',    true);
                     Session::set('currentUser', $uid);
                     Url::redirect('home');

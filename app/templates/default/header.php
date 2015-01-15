@@ -8,8 +8,8 @@
 
 	<!-- CSS -->
 	<?php
-	helpers\assets::css(array(
-		helpers\url::template_path() . 'assets/css/style.css',
+	helpers\Assets::css(array(
+		helpers\Url::template_path() . 'assets/css/style.css',
 	))
 	?>
 

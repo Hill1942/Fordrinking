@@ -8,8 +8,10 @@
 
 namespace daos;
 
+use core\Dao;
 
 class BlogDao extends Dao {
+
 
     /**
      * @param $num
