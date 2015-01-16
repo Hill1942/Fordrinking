@@ -22,19 +22,22 @@
         $container.find('.scatter-modal-wnd')
             .css('opacity', '0')
             .css('width',  width + 'px')
-            .css('height', height + 'px')
+            //.css('height', height + 'px')
             .css('top',  '100px')
             .css('left', ((clientWidth  - width) / 2) + 'px')
             .fadeTo(500, 1);
 
         $('.scatter-modal')
-            .append('<div id="blind"></div>')
-            .find('#blind')
+            .append("<div class='blind'></div>")
+            .find('.blind')
             .css('opacity', '0')
-            .fadeTo(500, 0.8)
-            .click(function() {
-                closeModal();
-            });
+            .fadeTo(500, 0.8);
+
+        $('.modal-cancel-btn').click(function() {
+            closeModal();
+        });
+
+        new SCATTER_EDITOR('postModalBody');
     }
 
     function closeModal() {
@@ -42,7 +45,7 @@
             $(this).remove();
         });
 
-        $('#blind').fadeOut(250, function() {
+        $('.blind').fadeOut(250, function() {
             $(this).remove();
         });
     }
@@ -51,6 +54,16 @@
         var modalHTMLs = [];
         modalHTMLs.push("<div class='scatter-modal'>");
         modalHTMLs.push("<div class='scatter-modal-wnd'>");
+        modalHTMLs.push("<div class='sm-wnd-header'>");
+        modalHTMLs.push("<div class='left'><span>Username</span></div>");
+        modalHTMLs.push("<div class='right'><span class='glyphicon glyphicon-cog'></span></div>");
+        modalHTMLs.push("</div>");
+        modalHTMLs.push("<div id='postModalBody' class='sm-wnd-body'>");
+        modalHTMLs.push("</div>");
+        modalHTMLs.push("<div class='sm-wnd-footer'>");
+        modalHTMLs.push("<div class='right'><button class='modal-cancel-btn'>Cancel</button></div>");
+        modalHTMLs.push("<div class='right'><button class='modal-post-btn'>Post</button></div>");
+        modalHTMLs.push("</div>");
         modalHTMLs.push("</div>");
         modalHTMLs.push("</div>");
 
@@ -71,7 +84,7 @@
 
         init: function() {
             width        = 540;
-            height       = 280;
+            //height       = 340;
             clientWidth  = $window.width();
             clientHeight = $window.height();
             $container   = $(".post-c");
