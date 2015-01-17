@@ -10,15 +10,19 @@
             </div>
             <div class="post-action-bar">
                 <div class="post-ab-l">
-                    <div class="tab" id="postPictureBtn" data-target="#testModal">
+                    <div class="tab" id="openBlogBtn">
+                        <span class="glyphicon glyphicon-file"></span>
+                        <span class="post-ab-t">Blog</span>
+                    </div>
+                    <div class="tab" id="openPictureBtn">
                         <span class="glyphicon glyphicon-picture"></span>
                         <span class="post-ab-t">Picture</span>
                     </div>
-                    <div class="tab" id="postSoundBtn">
+                    <div class="tab" id="openSoundBtn">
                         <span class="glyphicon glyphicon-headphones"></span>
                         <span class="post-ab-t">Sound</span>
                     </div>
-                    <div class="tab" id="postVideoBtn">
+                    <div class="tab" id="openVideoBtn">
                         <span class="glyphicon glyphicon-facetime-video"></span>
                         <span class="post-ab-t">Video</span>
                     </div>

@@ -5,40 +5,20 @@
 (function($) {
 
     var width;
-    var height;
     var clientWidth;
     var clientHeight;
 
     var $container      = null;
     var $window         = $(window);
-    var $postPictureBtn = $("#postPictureBtn");
+    var $openPictureBtn = $("#openPictureBtn");
+    var $openBlogBtn    = $("#openBlogBtn");
+    var $openSoundBtn   = $("#openSoundBtn");
+    var $openVideoBtn   = $("#openVideoBtn");
 
-
-
-    function openModal(event) {
-        event.preventDefault();
-        createModal();
-
-        $container.find('.scatter-modal-wnd')
-            .css('opacity', '0')
-            .css('width',  width + 'px')
-            //.css('height', height + 'px')
-            .css('top',  '100px')
-            .css('left', ((clientWidth  - width) / 2) + 'px')
-            .fadeTo(500, 1);
-
-        $('.scatter-modal')
-            .append("<div class='blind'></div>")
-            .find('.blind')
-            .css('opacity', '0')
-            .fadeTo(500, 0.8);
-
-        $('.modal-cancel-btn').click(function() {
-            closeModal();
-        });
-
-        new SCATTER_EDITOR('postModalBody');
-    }
+    var editor;
+    var photos;
+    var sound;
+    var video;
 
     function closeModal() {
         $container.find('.scatter-modal').fadeOut(250, function() {
@@ -47,6 +27,37 @@
 
         $('.blind').fadeOut(250, function() {
             $(this).remove();
+        });
+    }
+
+    function postInModal(event) {
+        var postData;
+        switch (event.data.kind) {
+            case 'editor':
+                postData = editor.GetValue();
+                break;
+            case 'photos':
+                postData = "photos";
+                break;
+            case 'sound':
+                postData = "photos";
+                break;
+            case 'video':
+                postData = "photos";
+                break;
+            default:
+                postData = "default";
+        }
+        $.ajax({
+            url: "post-text",
+            type: "post",
+            data: {
+                content: postData
+            },
+            success: function(value) {
+                closeModal();
+                $(".blogs").prepend(value);
+            }
         });
     }
 
@@ -61,8 +72,8 @@
         modalHTMLs.push("<div id='postModalBody' class='sm-wnd-body'>");
         modalHTMLs.push("</div>");
         modalHTMLs.push("<div class='sm-wnd-footer'>");
-        modalHTMLs.push("<div class='right'><button class='modal-cancel-btn'>Cancel</button></div>");
-        modalHTMLs.push("<div class='right'><button class='modal-post-btn'>Post</button></div>");
+        modalHTMLs.push("<div class='right'><button id='cancelModalBtn' class='modal-cancel-btn'>Cancel</button></div>");
+        modalHTMLs.push("<div class='right'><button id='postModalBtn' class='modal-post-btn'>Post</button></div>");
         modalHTMLs.push("</div>");
         modalHTMLs.push("</div>");
         modalHTMLs.push("</div>");
@@ -80,16 +91,58 @@
             .css('left', ((clientWidth  - width) / 2) + 'px');
     }
 
+    function openModal(param) {
+        //event.preventDefault();
+        createModal();
+
+        $container.find('.scatter-modal-wnd')
+            .css('opacity', '0')
+            .css('width',  width + 'px')
+            .css('top',  '100px')
+            .css('left', ((clientWidth  - width) / 2) + 'px')
+            .fadeTo(500, 1);
+
+        $('.scatter-modal')
+            .append("<div class='blind'></div>")
+            .find('.blind')
+            .css('opacity', '0')
+            .fadeTo(500, 0.8);
+
+        $('.modal-cancel-btn').on('click', closeModal);
+        $('.modal-post-btn').on('click', {kind: param}, postInModal);
+    }
+
+    function openBlogModal(event) {
+        openModal(event.data.kind);
+        editor = new SCATTER_EDITOR('postModalBody');
+    }
+
+    function openPictureModal(event) {
+        openModal(event.data.kind);
+        photos = new SCATTER_PHOTO('postModalBody');
+    }
+
+    function openSoundModal(event) {
+        openModal(event.data.kind);
+    }
+
+    function openVideoModal(event) {
+        openModal(event.data.kind);
+    }
+
     var modal = {
 
         init: function() {
             width        = 540;
-            //height       = 340;
             clientWidth  = $window.width();
             clientHeight = $window.height();
             $container   = $(".post-c");
+
             $window.on("resize", resizeWindow);
-            $postPictureBtn.on("click", openModal);
+            $openBlogBtn.on("click", {kind: "editor"}, openBlogModal);
+            $openPictureBtn.on("click", {kind: "photos"}, openPictureModal);
+            $openSoundBtn.on("click", {kind: "sound"}, openSoundModal);
+            $openVideoBtn.on("click", {kind: "video"}, openVideoModal);
         },
 
         run: function() {

@@ -4,21 +4,28 @@
 
 (function($, win) {
 
+    var frameDoc;
+    var editorNode;
+
     var editor = win.SCATTER_EDITOR = function(id) {
         
         var parent   = "#" + id;
         var htmlMode = false;
-        var frameDoc;
-        var editorNode;
+
+        this.node    = null;
+        this.trackId = id;
+
 
         initEditor();
+
+        this.node = editorNode;
 
         function initEditor() {
             createFramework();
             createContent();
             addEventHandler();
 
-            frameDoc = getIFrameDocument(".sc-editor-iframe");
+            frameDoc   = getIFrameDocument(".sc-editor-iframe");
             editorNode = $(".sc-editor-iframe").contents().find("body").find(".sc-editor");
 
             editorNode.on("keydown", function() {
@@ -27,8 +34,9 @@
                     $(".sc-editor-iframe").css('height', currentHeight + 'px');
                 }
             });
-
             editorNode.focus();
+
+            //node = editorNode;
         }
         
         function createFramework() {
@@ -165,9 +173,13 @@
             }
             contentNode.focus();
         }
-        
-
     };
+
+    editor.prototype.GetValue = function() {
+        console.log(this.node.html());
+        return this.node.html();
+        //return "fuck";
+    }
 
 })(jQuery, window);
 
