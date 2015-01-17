@@ -62,7 +62,7 @@ class User extends Controller {
             $uploadFile = $uploadDir . $newName;
 
             if (!move_uploaded_file($file['tmp_name'], $uploadFile)) {
-               return;
+                return;
             }
             $imgURL = DIR . "upload/" . $newName;
 
@@ -77,9 +77,9 @@ class User extends Controller {
         $content   = implode("\n", $contents);
         $avatar    = $userModel->getAvatar($uid);
         $date      = date('y-m-d H:i:s', time());
+        $blog      = $_POST['attachData'];
 
-
-
+        $content  .= $blog;
         $blogModel->postBlog($content, $user);
 
         echo "<div class='blog-item'>\n";

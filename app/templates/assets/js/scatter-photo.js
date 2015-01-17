@@ -7,7 +7,12 @@
     var $urlInputArea;
     var photoNums = 0;
 
-    var photo = win.SCATTER_PHOTO = function(domID) {
+    var photos = win.SCATTER_PHOTO_INFO = [];
+    var photo  = win.SCATTER_PHOTO = function(domID, selfID) {
+
+        this.photoNumber = 0;
+        this.PubSub = {};
+        this.oninsertImage = null;
 
         initPhotos();
 
@@ -19,6 +24,10 @@
             $('.sc-p-url-btn').on('click', urlBtnClicker);
             $('.sc-url-confirm').on('click', urlBtnConfirm);
             $('.sc-p-i-btn').on('click', photoBtnOpen);
+        }
+
+        photos[selfID] = {
+            photoNumber: this.photoNumber
         }
     };
 
@@ -99,6 +108,7 @@
                 });
                 $newItem.find(".sc-p-del-img").on("click", deletePhoto);
                 $newItem.find(".sc-p-link-img").on("click", linkPhoto);
+
             };
         }
     }
@@ -107,10 +117,11 @@
 
         var uiHTMLs = [];
         uiHTMLs.push("<div class='sc-p-c'>");
+        uiHTMLs.push("<form class='sc-p-form' id='uploadPhotoForm' enctype='multipart/form-data'>");
         uiHTMLs.push("<div class='sc-p-load-imgs'></div>");
         uiHTMLs.push("<div class='sc-p-insert'>");
         uiHTMLs.push("<span class='glyphicon glyphicon-picture sc-p-i-btn'></span>");
-        uiHTMLs.push("<form class='sc-p-files' id='uploadPhotoForm' enctype='multipart/form-data'></form>");
+        uiHTMLs.push("<div class='sc-p-files'></div>");
         uiHTMLs.push("</div>");
         uiHTMLs.push("<div class='sc-p-url-c'>");
         uiHTMLs.push("<div class='sc-p-url'>");
@@ -124,6 +135,7 @@
         uiHTMLs.push("</div>");
         uiHTMLs.push("</div>");
         uiHTMLs.push("</div>");
+        uiHTMLs.push("</form>");
         uiHTMLs.push("</div>");
 
         $("#" + id).append($(uiHTMLs.join("\n")));
@@ -132,6 +144,17 @@
     photo.prototype.GetData = function() {
         var formElement = document.getElementById("uploadPhotoForm");
         return new FormData(formElement);
+    };
+
+    photo.prototype.attachData = function(data) {
+        $("#uploadPhotoForm").append($("<textarea id='scPhotoAttachData' name='attachData' style='display: none'></textarea>"));
+        $("#scPhotoAttachData").val(data);
     }
+
+
+
+
+
+
 
 }(jQuery, window));

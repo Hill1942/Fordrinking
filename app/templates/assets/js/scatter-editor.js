@@ -176,7 +176,8 @@
     };
 
     editor.prototype.GetValue = function() {
-        console.log(this.node.html());
+        console.log(this.node);
+        //console.log(this.node.html());
         return this.node.html();
         //return "fuck";
     }

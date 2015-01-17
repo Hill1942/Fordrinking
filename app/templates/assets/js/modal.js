@@ -17,6 +17,7 @@
 
     var editor;
     var photos;
+    var photosEditor;
     var sound;
     var video;
 
@@ -107,6 +108,13 @@
     function openPictureModal(event) {
         openModal(event.data.kind);
         photos = new SCATTER_PHOTO('postModalBody');
+        photosEditor = new SCATTER_EDITOR('postModalBody');
+
+        var $container = $("#postModalBody");
+        $container.find(".sc-e-title").remove();
+        $container.find(".sc-e-bar").css('margin-top', '15px');
+        $container.find(".sc-e-bar-image").remove();
+
     }
 
     function openSoundModal(event) {
@@ -141,7 +149,9 @@
                 $(".blogs").prepend(xhr.responseText);
             }
         };
+        photos.attachData(photosEditor.GetValue());
         xhr.send(photos.GetData());
+
     }
 
     function progressFunction(evt) {
