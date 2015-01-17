@@ -72,7 +72,10 @@ Router::any('signup-check', '\controllers\user\signup@check');
 Router::any('login', '\controllers\user\auth@login');
 Router::any('logout', '\controllers\user\auth@logout');
 
-Router::any('post-text', '\controllers\user\user@post');
+Router::any('post-blog', '\controllers\user\user@postBlog');
+Router::any('post-photos', '\controllers\user\user@postPhotos');
+Router::any('post-sound', '\controllers\user\user@postSound');
+Router::any('post-video', '\controllers\user\user@postVideo');
 
 Router::any('more-blog', '\controllers\home@moreBlogs');
 //if no route found

@@ -41,7 +41,7 @@
 
     function photoBtnOpen() {
         var id= new Date().getTime();
-        var $newImgUpload = $("<input style='display: none' id='imgFile" + id + "' type='file'>");
+        var $newImgUpload = $("<input style='display: none' name='imgFiles[]' id='imgFile" + id + "' type='file'>");
         $(".sc-p-files").append($newImgUpload);
         var $file = $("#imgFile" + id);
         $file.on("change", {file: $file[0]}, previewPhoto).click();
@@ -49,7 +49,9 @@
 
     function deletePhoto() {
         var $parent = $(this).parent().parent();
+        var index = $parent.index();
         $parent.remove();
+        $(".sc-p-files").children().eq(index).remove();
         photoNums--;
         if (photoNums == 0) {
             $(".sc-p-insert").css('padding', '148px 0');
@@ -72,6 +74,7 @@
                 var imgSrc        = e.target.result;
                 var id            = new Date().getTime();
                 var newPhotoHTMLs = [];
+
                 newPhotoHTMLs.push("<div class='sc-p-new-load-item sc-p-id" + id + "'>");
                 newPhotoHTMLs.push("<img class='sc-p-load-item-img' src='" + imgSrc + "'/>");
                 newPhotoHTMLs.push("<div class='sc-p-img-action'>");
@@ -83,6 +86,7 @@
                 newPhotoHTMLs.push("</div>");
                 newPhotoHTMLs.push("</div>");
                 newPhotoHTMLs.push("</div>");
+                newPhotoHTMLs.push("</form>");
 
                 $(".sc-p-load-imgs").append($(newPhotoHTMLs.join("\n")));
                 $(".sc-p-insert").css('padding', '48px 0');
@@ -99,8 +103,6 @@
         }
     }
 
-
-
     function createUI(id) {
 
         var uiHTMLs = [];
@@ -108,7 +110,7 @@
         uiHTMLs.push("<div class='sc-p-load-imgs'></div>");
         uiHTMLs.push("<div class='sc-p-insert'>");
         uiHTMLs.push("<span class='glyphicon glyphicon-picture sc-p-i-btn'></span>");
-        uiHTMLs.push("<div class='sc-p-files'></div>");
+        uiHTMLs.push("<form class='sc-p-files' id='uploadPhotoForm' enctype='multipart/form-data'></form>");
         uiHTMLs.push("</div>");
         uiHTMLs.push("<div class='sc-p-url-c'>");
         uiHTMLs.push("<div class='sc-p-url'>");
@@ -125,6 +127,11 @@
         uiHTMLs.push("</div>");
 
         $("#" + id).append($(uiHTMLs.join("\n")));
+    }
+
+    photo.prototype.GetData = function() {
+        var formElement = document.getElementById("uploadPhotoForm");
+        return new FormData(formElement);
     }
 
 }(jQuery, window));

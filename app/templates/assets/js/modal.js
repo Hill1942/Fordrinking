@@ -31,34 +31,21 @@
     }
 
     function postInModal(event) {
-        var postData;
         switch (event.data.kind) {
             case 'editor':
-                postData = editor.GetValue();
+                postBlog();
                 break;
             case 'photos':
-                postData = "photos";
+                postPhotos();
                 break;
             case 'sound':
-                postData = "photos";
+                postSound();
                 break;
             case 'video':
-                postData = "photos";
+                postVideo();
                 break;
             default:
-                postData = "default";
         }
-        $.ajax({
-            url: "post-text",
-            type: "post",
-            data: {
-                content: postData
-            },
-            success: function(value) {
-                closeModal();
-                $(".blogs").prepend(value);
-            }
-        });
     }
 
     function createModal() {
@@ -128,6 +115,60 @@
 
     function openVideoModal(event) {
         openModal(event.data.kind);
+    }
+
+    function postBlog() {
+        $.ajax({
+            url: "post-blog",
+            type: "post",
+            data: {
+                content: editor.GetValue()
+            },
+            success: function(value) {
+                closeModal();
+                $(".blogs").prepend(value);
+            }
+        });
+    }
+
+    function postPhotos() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'post-photos', true);
+        xhr.upload.addEventListener("progress", progressFunction, false);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                closeModal();
+                $(".blogs").prepend(xhr.responseText);
+            }
+        };
+        xhr.send(photos.GetData());
+    }
+
+    function progressFunction(evt) {
+
+       /* var progressBar = document.getElementByIdx_x_x("progressBar");
+
+        var percentageDiv = document.getElementByIdx_x_x("percentage");
+
+        if (evt.lengthComputable) {
+
+            progressBar.max = evt.total;
+
+            progressBar.value = evt.loaded;
+
+            percentageDiv.innerHTML = Math.round(evt.loaded / evt.total * 100) + "%";
+
+        }*/
+
+    }
+
+
+    function postSound() {
+
+    }
+
+    function postVideo() {
+
     }
 
     var modal = {
