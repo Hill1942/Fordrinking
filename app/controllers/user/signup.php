@@ -39,7 +39,7 @@ class Signup extends Controller {
             return ;
         }
 
-        if ($userModel->isMailExist($username)) {
+        if ($userModel->isNameExist($username)) {
             echo "user-exist";
             return;
         }
@@ -52,6 +52,26 @@ class Signup extends Controller {
         Session::set('currentUser', $uid);
 
         echo "user-added";
+    }
+
+    public function checkEmail() {
+        $email    = $_POST['email'];
+
+        $userModel = new UserModel();
+        if ($email != "" && $userModel->isMailExist($email)) {
+            echo "email-exist";
+            return ;
+        }
+    }
+
+    public function checkUsername() {
+        $username = $_POST['username'];
+
+        $userModel = new UserModel();
+        if ($username != "" && $userModel->isMailExist($username)) {
+            echo "user-exist";
+            return ;
+        }
     }
 
 }
