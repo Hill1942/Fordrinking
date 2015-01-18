@@ -129,6 +129,11 @@
     box-shadow: 0px 2px 3px #37474F;
 }
 
+.blog-body iframe {
+    width: 540px;
+    margin-left: -15px;
+}
+
 .blog-footer {
     padding: 15px;
 }

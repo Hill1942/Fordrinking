@@ -123,6 +123,7 @@
 
     function openVideoModal(event) {
         openModal(event.data.kind);
+        video = new SCATTER_VIDEO('postModalBody');
     }
 
     function postBlog() {
@@ -178,7 +179,17 @@
     }
 
     function postVideo() {
-
+        $.ajax({
+            url: "post-video",
+            type: "post",
+            data: {
+                content: video.GetURL()
+            },
+            success: function(value) {
+                closeModal();
+                $(".blogs").prepend(value);
+            }
+        });
     }
 
     var modal = {
