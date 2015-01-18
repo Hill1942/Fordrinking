@@ -1,5 +1,5 @@
 .post-c {
-    height: 160px;
+    height:  128px;;
 }
 
 .post {
@@ -49,37 +49,39 @@
     position: relative;
 }
 .post-action-bar {
-    height: 36px;
+    height: 100px;
+    width: 540px;
+    background-color: #006A79;
 }
 
-.post-ab-l {
-    float: left;
-    font-size: 18px;
-    color: #ACB5B1;
-    margin-top: 5px;
+.post-a-item {
+    margin: 0 6px;
+    padding: 0 6px;
+}
+
+.post-a-item:hover {
+    background-color: #0C7383;
+}
+
+.post-a-icon {
+    width: 64px;
+    height: 50px;
+    font-size: 48px;
+    color: #D8E0E4;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.post-a-icon span {
+
 }
 
 .post-ab-t {
-    font-size: 14px;
-    margin-bottom: 5px;
-    vertical-align: middle;
-    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+    color: #72A7B5;
+    height: 20px;
 }
-
-.post-ab-r {
-    float: right;
-}
-
-#postSubmit {
-    border: none;
-    background-color: #80CBC4;
-    color: #515151;
-    height: 32px;
-    width: 80px;
-    font-size: 18px;
-}
-
-
 
 .blogs-c {
 
