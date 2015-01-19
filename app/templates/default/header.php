@@ -4,6 +4,7 @@
 
 	<!-- Site meta -->
 	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<title><?php echo $data['title'].' - '.SITETITLE; ?></title>
 
 	<!-- CSS -->
