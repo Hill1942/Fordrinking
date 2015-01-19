@@ -56,7 +56,8 @@ class User extends Controller {
         $file_ary = $this->reArrayFiles($_FILES['imgFiles']);
 
         foreach ($file_ary as $file) {
-            $type       = explode('/', $file['type'])[1];
+            $temp       = explode('/', $file['type']);
+            $type       = $temp[1];
             $name       = basename($file['name']) . time();
             $newName    = md5($name) . "." . $type;
             $uploadFile = $uploadDir . $newName;
