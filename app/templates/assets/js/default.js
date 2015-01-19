@@ -162,7 +162,7 @@
 
     function loadingMoreBlogs() {
         var clientHeight = $(window).height();
-        var scrollTop = $(document).scrollTop();
+        var scrollTop    = $(document).scrollTop();
         var scrollHeight = document.body.scrollHeight;
 
         if(clientHeight + scrollTop >= scrollHeight - 10){
