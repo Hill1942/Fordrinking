@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="h-user right">
-            <div class="h-tab-row">
+            <div class="h-tab-row" id="userNavRow">
                 <div class="tab left">
                     <a class="glyphicon glyphicon-home" href="#"></a>
                     <span class="h-tab-s">Home</span>
@@ -25,7 +25,7 @@
                         <a class="glyphicon glyphicon-envelope" href="#"></a>
                         <span class="h-tab-s">Message</span>
                     </div>
-                    <div id="userSettingBtn" class="tab left pos-rel">
+                    <div id="userSettingBtn" class="tab left pos-rel" data-state="0">
                         <a class="glyphicon glyphicon-user" href="#"></a>
                         <span class="h-tab-s">Setting</span>
                         <div id="userSetting">
@@ -48,6 +48,9 @@
                 <?php } else { ?>
 
                 <?php } ?>
+            </div>
+            <div class="h-nav" id="navBtn" data-state="0">
+                <span class="glyphicon glyphicon-th-large"></span>
             </div>
         </div>
     </div>

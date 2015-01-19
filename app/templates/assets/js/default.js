@@ -12,6 +12,8 @@
     var $postSubmit     = $("#postSubmit");
     var $postText       = $("#postText");
     var $signupAlertMsg = $("#signupAlert");
+    var $navBtn         = $("#navBtn");
+    var $navNavRow      = $("#userNavRow");
 
     var emailExist      = true;
     var usernameExist   = true;
@@ -137,14 +139,26 @@
         });
     }
 
-    function userSettingBtnHover(e) {
-
-        if (e.type == "mouseenter") {
-            $userSetting.slideDown();
-        } else if (e.type == "mouseleave") {
-            $userSetting.slideUp();
+    function userSettingBtnClicker(e) {
+        var $this = $(this);
+        if ($this.data("state") == 0) {
+            $userSetting.slideDown(100);
+            $this.data("state", 1);
+        } else {
+            $userSetting.slideUp(100);
+            $this.data("state", 0);
         }
+    }
 
+    function navBtnClicker() {
+        var $this = $(this);
+        if ($this.data("state") == 0) {
+            $navNavRow.slideDown();
+            $this.data("state", 1);
+        } else {
+            $navNavRow.slideUp();
+            $this.data("state", 0);
+        }
     }
 
     function postSubmitBtnClicker() {
@@ -193,14 +207,14 @@
         addEvent: function() {
             $(document).on("scroll", loadingMoreBlogs);
             $loginBtn.on("click", signupBtnClicker);
-            $userSettingBtn.on("mouseenter", userSettingBtnHover)
-                           .on("mouseleave", userSettingBtnHover);
+            $userSettingBtn.on("click", userSettingBtnClicker);
             $postSubmit.on("click", postSubmitBtnClicker);
+            $navBtn.on("click", navBtnClicker);
             $("#signupMail").on("blur", ajaxCheckSignupEmail);
             $("#signupName").on("blur", ajaxCheckSignupUsername);
             $(".signup-form .form-item-t").on("keydown", function() {
                 $signupAlertMsg.html("");
-            })
+            });
         },
 
         run: function() {
