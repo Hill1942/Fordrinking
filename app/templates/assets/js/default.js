@@ -166,7 +166,7 @@
         var scrollTop = $(document).scrollTop();
         var scrollHeight = document.body.scrollHeight;
 
-        if(clientHeight + scrollTop >= scrollHeight){
+        if(clientHeight + scrollTop >= scrollHeight - 10){
             $(document).off("scroll", loadingMoreBlogs);
             $.ajax({
                 url: "more-blog",
