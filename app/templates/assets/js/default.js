@@ -161,11 +161,13 @@
     }
 
     function loadingMoreBlogs() {
+
         var clientHeight = $(window).height();
         var scrollTop = $(document).scrollTop();
         var scrollHeight = document.body.scrollHeight;
 
         if(clientHeight + scrollTop >= scrollHeight){
+            $(document).off("scroll", loadingMoreBlogs);
             $.ajax({
                 url: "more-blog",
                 type: "post",
@@ -175,6 +177,7 @@
                 success: function (data) {
                     $(".blogs").append(data);
                     blogIndex += 5;
+                    $(document).on("scroll", loadingMoreBlogs);
                 }
             });
 
