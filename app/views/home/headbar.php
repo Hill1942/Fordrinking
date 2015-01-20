@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="h-user right">
-            <div class="h-tab-row" id="userNavRow">
+            <div class="h-tab-row collapse" id="userNavRow">
                 <div class="tab left">
                     <a class="glyphicon glyphicon-home" href="#"></a>
                     <span class="h-tab-s">Home</span>

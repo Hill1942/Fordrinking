@@ -153,10 +153,10 @@
     function navBtnClicker() {
         var $this = $(this);
         if ($this.data("state") == 0) {
-            $navNavRow.slideDown();
+            $navNavRow.removeClass("collapse");
             $this.data("state", 1);
         } else {
-            $navNavRow.slideUp();
+            $navNavRow.addClass("collapse");
             $this.data("state", 0);
         }
     }

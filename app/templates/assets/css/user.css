@@ -125,11 +125,14 @@
 
 
 .h-tab-row {
-    display: none;
-    margin-top: 60px;
     height: 210px;
     right: 0;
     position: absolute;
+    top: 60px;
+}
+
+.collapse {
+    display: none;
 }
 
 @media (min-width: 768px) {
@@ -137,6 +140,7 @@
         height: 36px;
         margin: 20px 15px 4px 15px;
         display: block;
+        top: 0px;
     }
 }
 
