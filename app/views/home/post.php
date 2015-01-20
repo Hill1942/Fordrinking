@@ -4,10 +4,6 @@
             <img class="post-user-img left" src="<?php echo $data['avatar']; ?>">
         </div>
         <div class="post-action">
-            <!--<div class="post-action-text">
-                <span id="postTextAngle"></span>
-                <textarea id="postText" class="post-a-text"></textarea>
-            </div>-->
             <div class="post-action-bar">
                 <div class="tab post-a-item" id="openBlogBtn">
                     <div class="post-a-icon">
@@ -47,5 +43,32 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<div class="post-c-m">
+    <div class="post-abm-actions" id="postAbmActions">
+        <ul>
+            <li class="post-abm-btn">
+                <span class="glyphicon glyphicon-file post-abm-a"></span>
+            </li>
+            <li class="post-abm-btn">
+                <span class="glyphicon glyphicon-picture post-abm-a"></span>
+            </li>
+            <li class="post-abm-btn">
+                <span class="glyphicon glyphicon-headphones post-abm-a"></span>
+            </li>
+            <li class="post-abm-btn">
+                <span class="glyphicon glyphicon-facetime-video post-abm-a"></span>
+            </li>
+            <li class="post-abm-btn">
+                <span class="glyphicon glyphicon-envelope post-abm-a"></span>
+            </li>
+            <li class="post-abm-btn">
+                <span class="glyphicon glyphicon-stats post-abm-a"></span>
+            </li>
+        </ul>
+    </div>
+    <div id="postMobileAdd" class="post-abm-trigger" data-state="0">
+        <span class="glyphicon glyphicon-plus post-abm-add"></span>
     </div>
 </div>

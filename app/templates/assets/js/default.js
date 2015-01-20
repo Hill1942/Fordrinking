@@ -14,6 +14,7 @@
     var $signupAlertMsg = $("#signupAlert");
     var $navBtn         = $("#navBtn");
     var $navNavRow      = $("#userNavRow");
+    var $postMobileAdd  = $("#postMobileAdd");
 
     var emailExist      = true;
     var usernameExist   = true;
@@ -161,6 +162,18 @@
         }
     }
 
+    function postMobileAddClicker() {
+        var $postAbmActions = $("#postAbmActions");
+        var $this = $(this);
+        if ($this.data('state') == 0) {
+            $postAbmActions.slideDown();
+            $this.data('state', 1);
+        } else {
+            $postAbmActions.slideUp();
+            $this.data('state', 0);
+        }
+    }
+
     function postSubmitBtnClicker() {
         $.ajax({
             url: "post-text",
@@ -210,6 +223,7 @@
             $userSettingBtn.on("click", userSettingBtnClicker);
             $postSubmit.on("click", postSubmitBtnClicker);
             $navBtn.on("click", navBtnClicker);
+            $postMobileAdd.on("click", postMobileAddClicker);
             $("#signupMail").on("blur", ajaxCheckSignupEmail);
             $("#signupName").on("blur", ajaxCheckSignupUsername);
             $(".signup-form .form-item-t").on("keydown", function() {
