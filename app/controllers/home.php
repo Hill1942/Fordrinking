@@ -31,6 +31,7 @@ class Home extends Controller {
 
 		$data['posts']     = $blogModel->getNewestBlog(5);
 		$data['avatar']    = $userModel->getAvatar(Session::get("currentUser"));
+		$data['username']  = $userModel->getUsername(Session::get("currentUser"));
 		$data['blogIndex'] = 5;
 
 		View::rendertemplate('header', $data);

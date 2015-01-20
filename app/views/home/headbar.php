@@ -1,13 +1,17 @@
 
 <div class="head-bar-c">
     <div class="head-bar">
+        <?php if (isset($_SESSION[SESSION_PREFIX.'loggedin']) &&
+        $_SESSION[SESSION_PREFIX.'loggedin']) { ?>
         <div class="h-search left">
-            <!--  -->
+        <?php } else { ?>
+        <div class="left">
+        <?php } ?>
             <img class="h-search-img left" src="<?php echo \helpers\url::template_path() . 'assets/img/fordrinking-logo.png' ?>">
-            <div class="h-search-item left">
-                <input class="h-search-i" type="text" id="h-search-input" placeholder="search and find">
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-            </div>
+        </div>
+        <div class="h-search-item left">
+            <input class="h-search-i" type="text" id="h-search-input" placeholder="search and find">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
         </div>
         <div class="h-user right">
             <div class="h-tab-row collapse" id="userNavRow">
@@ -49,6 +53,15 @@
 
                 <?php } ?>
             </div>
+            <?php if (isset($_SESSION[SESSION_PREFIX.'loggedin']) &&
+            $_SESSION[SESSION_PREFIX.'loggedin']) { ?>
+            <div class="h-tab-avatar">
+                <img class="h-nav-avatar" src="<?php echo $data['avatar']; ?>">
+                <span class="h-nav-username"><?php echo $data['username']; ?></span>
+            </div>
+            <?php } else { ?>
+
+            <?php } ?>
             <div class="h-nav" id="navBtn" data-state="0">
                 <span class="glyphicon glyphicon-th-large"></span>
             </div>
