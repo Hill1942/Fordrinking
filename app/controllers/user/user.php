@@ -28,6 +28,8 @@ class User extends Controller {
         $avatar    = $userModel->getAvatar($uid);
         $date      = date('y-m-d H:i:s', time());
 
+        $content   = "<div class='blog-body-t'>" . $content . "</div>";
+
         $blogModel->postBlog($content, $user);
 
         echo "<div class='blog-item'>\n";
@@ -80,7 +82,7 @@ class User extends Controller {
         $date      = date('y-m-d H:i:s', time());
         $blog      = $_POST['attachData'];
 
-        $content  .= $blog;
+        $content  .= ("<div class='blog-body-t'>" . $blog . "</div>");
         $blogModel->postBlog($content, $user);
 
         echo "<div class='blog-item'>\n";
@@ -110,6 +112,9 @@ class User extends Controller {
         $content   = $_POST['content'];
         $avatar    = $userModel->getAvatar($uid);
         $date      = date('y-m-d H:i:s', time());
+        $blog      = '';
+
+        $content  .= ("<div class='blog-body-t'>" . $blog . "</div>");
 
         $blogModel->postBlog($content, $user);
 
