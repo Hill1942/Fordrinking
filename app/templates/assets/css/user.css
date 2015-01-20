@@ -1,9 +1,15 @@
 .head-bar-c {
-    height: 60px;
+    height: 48px;
     background-color: #263238;
     position: fixed;
     width: 100%;
     z-index: 1000;
+}
+
+@media (min-width: 768px) {
+    .head-bar-c {
+        height: 60px;
+    }
 }
 
 .head-bar {
@@ -113,7 +119,7 @@
 .h-tab-avatar {
     position: absolute;
     left: 20px;
-    top: 18px;
+    top: 12px;
     cursor: pointer;
 }
 
@@ -133,7 +139,7 @@
 .h-nav {
     position: absolute;
     right: 15px;
-    top: 15px;
+    top: 12px;
     color: #80CBC4;
     font-size: 24px;
     cursor: pointer;
@@ -143,7 +149,7 @@
     color: #B5B5B5;
     display: inline-block;
     vertical-align: middle;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     margin-left: 10px;
     font-size: 18px;
 }

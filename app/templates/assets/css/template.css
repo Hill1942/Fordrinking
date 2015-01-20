@@ -1,5 +1,11 @@
 .framework-c {
-    padding-top: 100px;
+    padding-top: 84px;
+}
+
+@media (min-width: 768px) {
+    .framework-c {
+        padding-top: 100px;
+    }
 }
 
 .framework {
@@ -23,8 +29,7 @@
 }
 
 .content {
-    width: 80%;
-    height: 400px;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
